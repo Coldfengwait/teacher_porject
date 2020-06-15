@@ -14,11 +14,12 @@ from .utils import create_logger
 
 app = Flask(__name__)
 
-config = 'config.Test'#os.environ['CONFIG']
+# 这里我强制写死了，实际则按转入的环境来选择
+config = 'config.Test'# os.environ['CONFIG']
+
 app.config.from_object( config )
-#设置admin为中文
+# 设置admin为中文
 app.config['BABEL_DEFAULT_LOCALE'] = 'zh_CN'
-app.jinja_env.filters['join_pgy_base_url'] = lambda v: v % app.config['PGY_BASE_URL']
 CORS(app, supports_credentials=True)
 
 db = SQLAlchemy(app)

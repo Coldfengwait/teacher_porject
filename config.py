@@ -1,3 +1,11 @@
+import os
+
+
+def get_path(rpath):
+    LOCAL_DIR = os.path.dirname(__file__)
+    return os.path.abspath(os.path.join(LOCAL_DIR, rpath))
+
+
 class Online(object):
     pass
 
@@ -31,5 +39,5 @@ class Test(object):
     LOG_NAME = 'teacher'
     LOG_CATEGORY = 'dev'
     SECRET_KEY = "fdfasdasdasdsadsadsadsa"
-    JWT_SECRET_KEY = "#PGYZSSC#32423adsadsad&YAN"
+    JWT_SECRET_KEY = "#sdas#32423adsadsad&YAN"
 

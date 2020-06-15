@@ -22,7 +22,7 @@ log.addHandler(h)
 
 
 def AutoHandler():
-    """课程更新提醒"""
+    """自动任务"""
     logger.debug("[AutoHandler] 开始")
 
     print("做对应的任务")
@@ -35,7 +35,7 @@ executors = {
 
 sched = BlockingScheduler(executors=executors)
 
-sched.add_job(AutoHandler, 'interval', seconds=3, start_date='2020-3-26 18:00:00')
+sched.add_job(AutoHandler, 'interval', seconds=3, start_date='2020-6-15 11:00:00')
 
 if __name__ == "__main__":
     sched.start()

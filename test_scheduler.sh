@@ -1,3 +1,3 @@
 #!/bin/bash
-export PGY_CONFIG="Test"
+export CONFIG="config.Test"
 python scheduler/auto_scheduler.py

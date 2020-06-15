@@ -13,6 +13,7 @@ def auth_login(*args, **kwargs):
             else:
                 token = data['token']
             if not token:
+                logger.error("没有token")
                 abort(401)
             try:
                 decode_data = jwt.decode(token, app.config['JWT_SECRET_KEY'], )
@@ -24,7 +25,7 @@ def auth_login(*args, **kwargs):
                 if not user or token !=redis_token:
                     abort(401)
             except Exception as e:
-                logger.debug(e)
+                logger.error(e)
                 abort(401)
             g.user = user
             return method(*func_args, **func_kwargs)

@@ -1,3 +1,3 @@
 #!/bin/bash
-export PGY_CONFIG="Test"
+export CONFIG="config.Test"
 python app.py
